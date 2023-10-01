@@ -1,16 +1,16 @@
-RootDir = ../../
+RootDir = ../
 
-C = x86_64-w64-mingw32-gcc
+C = g++
 Libs = 
 Flags = -Wl,-rpath,'$$ORIGIN' -I$(RootDir)/inc/ -L$(RootDir)/bin/
 
-ObjDir = $(RootDir)/obj/game
-ObjFiles = $(ObjDir)/main.o
+ObjDir = $(RootDir)/obj
+ObjFiles = $(ObjDir)/AMCS.o
 
-Binary = $(RootDir)/bin/game.exe
+Binary = $(RootDir)/bin/AMCS
 
 $(Binary): $(ObjFiles)
 	$(C) $(Flags) $^ -o $@ $(Libs)
 
-$(ObjDir)/%.o: %.c
+$(ObjDir)/%.o: %.cpp
 	$(C) -c $(Flags) $< -o $@
