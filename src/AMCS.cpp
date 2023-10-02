@@ -36,6 +36,7 @@ void decryptBitSwap(char* data, int length, const uint64_t bitsCopy) {
 			b = 63;
 		}
 
+		// I HAVE NO IDEA WHY THIS IS B-1, NO FUCKING CLUE, BUT IT WORKS.
 		if ((bits & (((uint64_t)1)<<(b-1))) && i != length-1) { // It was swapped forkward, Swap backward
 			tmp = data[i];
 			data[i] = data[i+1];
