@@ -1,7 +1,7 @@
 RootDir = ../
 
 C = g++
-Libs = 
+Libs = -lm
 Flags = -Wl,-rpath,'$$ORIGIN' -I$(RootDir)/inc/ -L$(RootDir)/bin/
 
 ObjDir = $(RootDir)/obj
